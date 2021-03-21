@@ -26,5 +26,5 @@ if (typeof printSegitiga == 'number' &&
         console.log(lengthBarisTerakhir);
     }
 } else {
-    console.log('Data harus Number');
+    console.log('Data harus Number \nNumber lebih dari atau sama dengan 2');
 }
