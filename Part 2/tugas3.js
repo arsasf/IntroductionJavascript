@@ -1,25 +1,30 @@
 // Tugas 3 : Menampilkan nilai diantara dari type Data array
 
 function seleksiNilai(nilaiAwal, nilaiAkhir, dataArray) {
-  // Validasi nilaiAwal < nilaiAkhir?
-  if (nilaiAwal >= nilaiAkhir) {
-    console.log('\nNilai akhir harus lebih dari nilai awal')
-    // validasi nilai dataArray > 5?
-  } else if (dataArray.length - 1 <= 5) {
-    console.log('\nJumlah Angka dalam dataArray tidak ada')
-  } else if (nilaiAwal < nilaiAkhir) {
-    // Mengurutkan nilai data Array dari terkecil ke yang terbesar
-    dataArray.sort((a, b) => a - b)
-    // Memfilter dan menampilkan nilai data Array diantara nilaiAwal dan nilai Akhir
+  if (typeof nilaiAwal === 'number' && typeof nilaiAkhir === 'number') {
+    // Kesalahan Memasukan nilai
+    if (nilaiAwal >= nilaiAkhir) {
+      console.log('\nNilai akhir harus lebih besar dari nilai awal')
+      // Kesalahan memasukan jumlah Data Array
+    } else if (dataArray.length - 1 <= 5) {
+      console.log('\nJumlah Angka dalam dataArray tidak ada')
+      // Proses Menyeleksi Nilai
+    } else {
+      // Mengurutkan nilai data Array dari terkecil ke yang terbesar
+      const sortir = dataArray.sort((a, b) => a - b)
+      // Memfilter dan menampilkan nilai data Array diantara nilaiAwal dan nilai Akhir
+      console.log('\nData yang ditemukan:')
+      console.log(sortir.filter((a) => a < nilaiAkhir && a > nilaiAwal))
+    }
+  } else {
+    // Kesalahan memasukan type data
     console.log(
-      dataArray.filter((a) => a > nilaiAwal).filter((b) => b < nilaiAkhir),
+      `\nHarap masukan type data Number. Nilai Awal adalah: ${typeof nilaiAwal}, Nilai Nkhir adalah: ${typeof nilaiAkhir}`,
     )
-    // validasi nilai number?
-  } else if (nilaiAwal !== 'number' && nilaiAkhir !== 'number') {
-    console.log('\nNilai bukan Angka, Silahkan masukan kembali')
   }
 }
 seleksiNilai(15, 3, [2, 25, 4, 14, 17, 30, 8])
 seleksiNilai(10, 17, [2, 25])
 seleksiNilai(5, 20, [2, 25, 4, 14, 17, 30, 8])
+seleksiNilai(5, 7, [2, 25, 4, 14, 17, 30, 8])
 seleksiNilai('a', 20, [2, 25, 4, 14, 17, 30, 8])

@@ -28,7 +28,9 @@ function searchName(character, limit, callback) {
     })
     callback(result, limit)
   } else {
-    console.log('Data yang anda cari tidak ada, cek kembali type data')
+    console.log(
+      `Data ${character} yang anda cari tidak ada, type data bernilai ${typeof character}`,
+    )
   }
 }
 // menampilkan hasil dari nilai lengan Array yang sudah dibatasi
@@ -37,7 +39,9 @@ function callback(value, limit) {
   if (typeof limit === 'number') {
     console.log(value.slice(0, limit))
   } else {
-    console.log('Data yang anda cari tidak ada, cek kembali type data')
+    console.log(
+      `Nilai limit ${limit} yang anda masukan bukan type data Number, type data bernilai ${typeof limit}`,
+    )
   }
 }
-searchName('an', 3, callback)
+searchName('aa', 'a', callback)
