@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tugas 4</title>
+  </head>
+  <body>
+    <script>
+      /*Tugas 4 
+      Menampilkan semua data yang bernama name menggunakan fetch*/
+      fetch('https://jsonplaceholder.typicode.com/users')
+        .then((response) => response.json())
+        .then((user) =>
+          user.forEach((element) => {
+            console.log(element.name)
+            document.writeln(element.name)
+          }),
+        )
+    </script>
+  </body>
+</html>
