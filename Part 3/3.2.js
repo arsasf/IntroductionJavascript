@@ -21,20 +21,16 @@ let added = (number) => {
 }
 // ===============Then & catch
 addNumber(15)
-  .then((result) => {
-    console.log(`Use Then Catch:`)
-    added(result)
-  })
-  .catch((reject) => console.log(`Use Then Catch => ${reject}`))
+  .then((result) => added(result))
+  .catch((reject) => console.log(`${reject}`))
 
 // =============Try & catch
-async function resultAdded() {
+async function resultAdded(number) {
   try {
-    let result = await addNumber(2)
-    console.log('Use Try Catch:')
-    await added(result)
+    await addNumber(number)
+    await added(number)
   } catch (error) {
-    console.log(`Use Try Catch => ${error}`)
+    console.log(`${error}`)
   }
 }
-resultAdded()
+resultAdded(4)

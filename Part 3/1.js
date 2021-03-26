@@ -32,15 +32,15 @@ cekHariKerja('sabtu')
 // */
 
 //try & catch
-async function output() {
+async function output(day) {
   try {
-    let result = await cekHariKerja('senin')
-    console.log(result)
+    await cekHariKerja(day)
+    console.log(day)
   } catch (error) {
     console.log(`${error}`)
   }
 }
-output()
+output('rabu')
 /*Pada try akan menjalankan proses dimana nilai tersebut berisi nilai benar(resolve) 
 atau error(reject), sedangkan catch akan menjalankan proses yang bernilai salah (reject)
 adapun prosesnya ebagai berikut :

@@ -6,7 +6,7 @@ let checkTypeData = (data) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (typeof data === 'number') {
-        resolve(`Data ${data} valid !`)
+        resolve(`Data ${typeof data} ${data} valid !`)
       } else {
         reject(new Error(`Data invalid! ${data} is ${typeof data}!`))
       }
@@ -14,17 +14,17 @@ let checkTypeData = (data) => {
   })
 }
 // =============Then & catch
-checkTypeData(2)
-  .then((result) => console.log(`${result} => Use Then Catch`))
-  .catch((reject) => console.log(`${reject}=> Use Then Catch`))
+checkTypeData(8)
+  .then((result) => console.log(`${result}`))
+  .catch((reject) => console.log(`${reject}`))
 
 // =============Try & catch
-let output = async () => {
+async function output(data) {
   try {
-    let result = await checkTypeData('dua')
-    console.log(`${result} => Use Try Catch`)
+    let result = await checkTypeData(data)
+    console.log(`${result}`)
   } catch (error) {
-    console.log(`${error} => Use Try Catch`)
+    console.log(`${error}`)
   }
 }
-output()
+output('Delapan')
