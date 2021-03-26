@@ -16,36 +16,26 @@ const cekHariKerja = (day) => {
     }, 3000)
   })
 }
-//then & catch
-cekHariKerja('senin')
-  .then((result) => {
-    console.log(`${result}`)
-  })
-  .catch((error) => {
-    console.log(`${error}`)
-  })
-/*Pada then akan menjalankan proses yang bernilai benar(resolve), sedangkan
-Pada catch akan menjalankan proses yang bernilai salah (reject)
-adapun prosesnya ebagai berikut :
- 1. then||catch = cekHariKerja : day => pemanggilan function
- 2. then||catch = Day ? DattaArray => function
- 3. then||catch = Item === day || !== day => Data Array
- 4. then||catch = cek : true || false => Pengkondisian 
- 5. then||catch = cek || error
- 6. then = result||catch = error 
-*/
+// then & catch
+cekHariKerja('sabtu')
+  .then((result) => console.log(`${result}`))
+  .catch((error) => console.log(`${error}`))
+// /*Pada then akan menjalankan proses yang bernilai benar(resolve), sedangkan
+// Pada catch akan menjalankan proses yang bernilai salah (reject)
+// adapun prosesnya ebagai berikut :
+//  1. then||catch = cekHariKerja : day => pemanggilan function
+//  2. then||catch = Day ? DattaArray => function
+//  3. then||catch = Item === day || !== day => Data Array
+//  4. then||catch = cek : true || false => Pengkondisian
+//  5. then||catch = cek || error
+//  6. then = result||catch = error
+// */
 
 //try & catch
-const doAsync = () => {
-  return cekHariKerja('rabu')
-}
-const showAsync = (data) => {
-  return console.log(data)
-}
-const output = async () => {
+async function output() {
   try {
-    let result = await doAsync()
-    showAsync(`${result}`)
+    let result = await cekHariKerja('senin')
+    console.log(result)
   } catch (error) {
     console.log(`${error}`)
   }

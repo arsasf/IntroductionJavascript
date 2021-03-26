@@ -26,9 +26,11 @@ const getmonth = (callback) => {
   }, 4000)
 }
 getmonth((isError, mapping) => {
-  if (true) {
+  if (isError === null) {
     mapping = mapping.map((a) => a)
     return console.log(`${isError}, [${mapping}]`)
+  } else {
+    console.log(`${isError},[]`)
   }
 })
 
