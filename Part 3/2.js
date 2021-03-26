@@ -3,7 +3,7 @@ Membuat Program callback function untuk menampilkan semua bulan
 menggunakan method map*/
 const getmonth = (callback) => {
   setTimeout(() => {
-    let error = false
+    let error = true
     let month = [
       'January',
       'Fabruary',
