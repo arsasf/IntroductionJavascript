@@ -26,12 +26,17 @@ const getmonth = (callback) => {
   }, 4000)
 }
 getmonth((isError, mapping) => {
-  if (isError === null) {
-    isError = null
+  if (true) {
     mapping = mapping.map((a) => a)
     return console.log(`${isError}, [${mapping}]`)
-  } else {
-    isError = new Error('Sorry Data Not Found')
-    return console.log(`${isError}, []`)
   }
 })
+
+/*proses functionnya
+1. getmonth (day) => callback : callback not found
+2. kondisi => !error  
+3. true => callback() || false => error
+4. callback() : found => getmonth()
+5. getmonth() => true
+6. return (null, month)
+*/
