@@ -2,8 +2,8 @@
 Membuat Program callback function untuk menampilkan semua bulan
 menggunakan method map*/
 const getmonth = (callback) => {
+  let error = false
   setTimeout(() => {
-    let error = false
     let month = [
       'January',
       'Fabruary',
@@ -18,28 +18,20 @@ const getmonth = (callback) => {
       'Nopember',
       'Desember',
     ]
-    if (!error) {
+    if (!error === !showError) {
       callback(null, month)
     } else {
       callback(new Error('Sorry Data Not Found'), [])
     }
   }, 4000)
 }
-
+console.log('Loading...')
+const showError = false //Berfungsi untuk menampilkan pesan error. true : menampilkan, false : tidak menampilkan
 getmonth((isError, mapping) => {
-  if (mapping) {
+  if (!isError && mapping) {
     mapping = mapping.map((a) => a)
-    return console.log(`${mapping}`)
+    return console.log(`Data ${!isError}, Berhasil Ditampilkan!\n${mapping}`)
   } else {
-    return console.log(`${isError}`)
+    return console.log(`${isError}, Data Gagal Ditampilkan!\n${mapping}`)
   }
-})
-
-/*proses functionnya
-1. getmonth (day) => callback : callback not found
-2. kondisi => !error  
-3. true => callback() || false => error
-4. callback() : found => getmonth()
-5. getmonth() => true
-6. return (null, month)
-*/
+}, showError)

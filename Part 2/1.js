@@ -7,27 +7,27 @@
 const toStringData = (data) => {
   if (typeof data === 'number') {
     const toStringData = data.toString()
-    console.log('Contoh 1.1 Number toString : \n' + toStringData)
+    return console.log('Contoh 1.1 Number toString : \n' + toStringData)
   } else if (typeof data === 'string') {
-    console.log('1.1 String to String : \n' + data)
+    return console.log('1.1 String to String : \n' + data)
   } else if (Array.isArray(data)) {
     data.toString()
-    console.log('Contoh 1.1 Array toString : \n' + data)
+    return console.log('Contoh 1.1 Array toString : \n' + data)
   } else if (typeof data === 'object' && data !== null) {
     const a = data
     a.toString()
-    console.log('Contoh 1.1 Obejct toString : \n')
-    console.log(a)
+    console.log('Contoh 1.1 Obejct toString : ')
+    return console.log(a)
   } else if (typeof data === 'function') {
-    console.log('Contoh 1.1 function toString : \n' + data)
+    return console.log('Contoh 1.1 function toString : \n' + data)
   } else if (typeof data === 'undefined') {
     data = typeof undefined
     data.toString()
-    console.log('Contoh 1.1 Undefined toString : \n' + data)
+    return console.log('Contoh 1.1 Undefined toString : \n' + data)
   } else if (data === null) {
     data = typeof null
     data.toString()
-    console.log('Contoh 1.1 Null to String: \n' + data)
+    return console.log('Contoh 1.1 Null to String: \n' + data)
   }
 }
 toStringData(230)
@@ -44,9 +44,9 @@ Contoh penggunaan toUppercase : */
 const toUpperCaseData = (data) => {
   if (typeof data === 'string') {
     data.toUpperCase()
-    console.log('\nContoh 1.2 toUpperCase : \n' + data)
+    return console.log('\nContoh 1.2 toUpperCase : \n' + data)
   } else {
-    console.log('Bukan String')
+    return console.log('Bukan String')
   }
 }
 toUpperCaseData('Saya Belajar Javascript')
@@ -58,19 +58,18 @@ Contoh penggunaan toUppercase dan toLowerCase pada sebuah program mengubah tampi
 const toLowerCaseData = (data) => {
   if (typeof data === 'string') {
     data.toLowerCase()
-    console.log('\nContoh 1.3 toLowerCase : \n' + data)
+    return console.log('\nContoh 1.3 toLowerCase : \n' + data)
   }
-  console.log('Bukan String')
+  return console.log('Bukan String')
 }
 toLowerCaseData('Saya Belajar Javascript')
 
 /* 1.4 push : Menambah nilai paling akhir dari sebuah array*/
 function pushDataArray(data, kata) {
   console.log(data)
-
   data.push(1, 20, 16)
   kata(data)
-  console.log(data)
+  return console.log(data)
 }
 function kata(teks) {
   const teks1 = ['ayam', 'kucing', 'kelinci']
@@ -82,9 +81,8 @@ pushDataArray([1, 2], kata)
 /* 1.5 pop : Menghapus nilai paling akhir*/
 const popDataArray = (data) => {
   console.log(data)
-
   data.pop()
-  console.log(data)
+  return console.log(data)
 }
 console.log('\nContoh 1.5 pop pada Array : ')
 popDataArray([1, 5, 6, 7, 8])
@@ -94,9 +92,8 @@ popDataArray([1, 5, 6, 7, 8])
 function sliceDataArray(start, end) {
   const data = [1, 2, 3, 4, 5, 6]
   console.log(data)
-
   const result = data.slice(start, end)
-  console.log(result)
+  return console.log(result)
 }
 console.log('\nContoh 1.6 Slice pada Array : ')
 sliceDataArray(1, 4)
@@ -114,11 +111,11 @@ console.log(dataArray)
 const parseIntData = (value) => {
   if (typeof value !== 'number') {
     const a = parseInt(value)
-    console.log(
+    return console.log(
       'Type data ' + typeof value + ' sudah dirubah menjadi ' + typeof a,
     )
   } else if (typeof value === 'number') {
-    console.log('Type data yang dimasukan sudah ' + typeof value)
+    return console.log('Type data yang dimasukan sudah ' + typeof value)
   }
 }
 console.log('\nContoh 1.8 ParseInt pada Type Data: ')
@@ -131,7 +128,7 @@ parseIntData()
 kemudian mengembalikan nilai kedalam String*/
 const toFixedNumber = (number1, number2) => {
   const value = number2 / number1
-  console.log(value.toFixed(2))
+  return console.log(value.toFixed(2))
 }
 console.log('\nContoh 1.9 toFixed pada Number: ')
 toFixedNumber(10, 5)
@@ -140,7 +137,7 @@ toFixedNumber(10, 5)
 kemudian mengembalikan nilai tersebut kedalam String*/
 const toExponentialData = (number1, number2) => {
   const value = number2 * number1
-  console.log(value.toExponential(1))
+  return console.log(value.toExponential(1))
 }
 console.log('\nContoh 1.10 toExponential pada Number: ')
 toExponentialData(4, 10)

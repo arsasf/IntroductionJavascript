@@ -28,8 +28,8 @@ function searchName(character, limit, callback) {
     })
     callback(result, limit)
   } else {
-    console.log(
-      `Data ${character} yang anda cari tidak ada, type data bernilai ${typeof character}`,
+    return console.log(
+      `Data ${character} yang anda cari tidak ada, type data bernilai ${typeof character}`, // Coding yang diperbaiki
     )
   }
 }
@@ -37,11 +37,13 @@ function searchName(character, limit, callback) {
 function callback(value, limit) {
   // validasi nilai number
   if (typeof limit === 'number') {
-    console.log(value.slice(0, limit))
+    return console.log(value.slice(0, limit))
   } else {
-    console.log(
-      `Nilai limit ${limit} yang anda masukan bukan type data Number, type data bernilai ${typeof limit}`,
+    return console.log(
+      `Nilai limit ${limit} yang anda masukan bukan type data Number, type data bernilai ${typeof limit}`, // Coding yang diperbaiki
     )
   }
 }
-searchName('aa', 'a', callback)
+searchName('an', 3, callback) // Search Name berhasil
+searchName(2, 3, callback) //Search Name gagal, character bukan string
+searchName('an', 'an', callback) // Searc Name gagal, limit bukan number

@@ -15,22 +15,22 @@ let addNumber = (number) => {
     }, 2000)
   })
 }
-let added = (number) => {
+let showAdded = (number) => {
   let value = number + number
-  console.log(`Data Result ${number} + ${number} = ${value}`)
+  return console.log(`Data Result ${number} + ${number} = ${value}`)
 }
 // ===============Then & catch
 addNumber(15)
-  .then((result) => added(result))
+  .then((result) => showAdded(result))
   .catch((reject) => console.log(`${reject}`))
 
 // =============Try & catch
 async function resultAdded(number) {
   try {
-    await addNumber(number)
-    await added(number)
+    let result = await addNumber(number)
+    await showAdded(result)
   } catch (error) {
     console.log(`${error}`)
   }
 }
-resultAdded(4)
+resultAdded(6)
