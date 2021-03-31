@@ -3,7 +3,7 @@ const sortingNumber = (number) => {
   if (typeof number !== "number") {
     console.log(`Input ${number} salah! Data harus bilangan Integer / Angka `);
   } else {
-    const splitNumber = `${number}`.toString().split(0);
+    const splitNumber = number.toString().split(0);
     let arr = [];
     for (let i = 0; i <= splitNumber.length - 1; i++) {
       arr =
